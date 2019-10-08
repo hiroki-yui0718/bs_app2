@@ -1,10 +1,82 @@
-<table class="table table-hover table-border">
-<thead>
+<nav class="navbar bg-info mb-4">
+<div class="navbar-header">メニュー</div>
+<div class="navbar mr-auto navbar-light">
+<%= link_to 'Food','#',class:"nav-item nav-link text-dark" %>
+<div class="dropdown">
+<%= link_to '予約','#',class:"nav-item nav-link text-dark dropdown-toggle",data:{toggle:"dropdown"} %>
+<div class="dropdown-menu">
+<%= link_to 'メニュー','#',class:"dropdown-item" %>
+<%= link_to 'Food','#',class:"dropdown-item" %>
+</div>
+</div>
+<%= link_to 'アクセス','#',class:"nav-item nav-link text-dark" %>
+</div>
+</nav>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<p>ようこそ</p>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<nav class="navbar fixed-bottom bg-info navbar-light">
+<%= link_to 'Food','#',class:"nav-item nav-link text-light" %>
+<%= link_to 'アクセス','#',class:"nav-item nav-link text-light" %>
+<%= link_to '予約','#',class:"nav-item nav-link text-light" %>
+<form class="form-inline">
+<input class="form-control mr-2" type="text" placeholder="Find">
+<button class="btn btn-outline-light" >Find</button>
+</form>
+</nav>
+<div class="row">
+<div class="col-md-3 order-2">
+<div class="nav flex-column border">
+<%= link_to '画面１','#',class:"nav-link" %>
+<%= link_to '画面１','#',class:"nav-link" %>
+<%= link_to '画面１','#',class:"nav-link" %>
+</div>
+</div>
+<div class="col-md-9 order-1">
+<button class="mb-3 btn btn-info" data-toggle="modal" data-target="#holiday">今月の休業日</button>
+<div class="modal fade" id="holiday">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">2018年6月の休業日</h5>
+        <button class="close" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        6月の定休日は<b>7日、14日、21日、28日</b>です。（毎週木曜日）<br><br>また、店内改装のため<b>6月18～20日は臨時休業</b>させていただきます。皆様にはご迷惑をおかけしますが、何卒よろしくお願い致します。
+      </div>
+      <div class="modal-footer">
+        <p class="mb-0 mr-3">boot dining 渋谷店</p>
+        <button class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>
+<table class="table table-striped table-hover table-border">
+<thead class="thead-dark">
 <tr><th>No.</th><th>Name</th><th>Mail</th><th>tel</th></tr>
 </thead>
-<tbody class="table-striped">
+<tbody>
 <tr><td>1</td><td>Taro</td><td>taro@yamada</td><td>03-999-999<td</tr>
 <tr><td>1</td><td>Taro</td><td>taro@yamada</td><td>03-999-999<td</tr>
 <tr><td>1</td><td>Taro</td><td>taro@yamada</td><td>03-999-999<td</tr>
 <tr><td>1</td><td>Taro</td><td>taro@yamada</td><td>03-999-999<td</tr>
 </tbody>
+</table>
+<%= link_to "#photo-01",data:{toggle:"modal"} do %>
+<%= image_tag 'lighthouse-1ss' %>
+<% end %>
+<div class="modal fade" id="photo-01" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-body">
+      <button class="close" data-dismiss="modal"><span>&times;</span></button>
+      <h6 class="modal-title">lighthouse-2.jpg</h6>
+      <%= image_tag 'lighthouse-1',class:"img-fluid" %>
+    </div>
+  </div>
+</div>
+</div>
+
